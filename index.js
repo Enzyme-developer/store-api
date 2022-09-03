@@ -1,6 +1,7 @@
 //imported dependencies
 const cors = require('cors')
 require('dotenv').config()
+require('express-async-errors')
 const notFound = require('./middlewares/notFound')
 const errorHandler = require('./middlewares/errorHandler')
 
@@ -19,7 +20,8 @@ app.use(cors({origin: '*'}));
 //routes
 app.use('/api/v1/products', productRouter)
 
-//product routes
+
+
 app.use(notFound)
 app.use(errorHandler)
 
